@@ -1,0 +1,566 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+.wf-roundedmplus1c { font-family: "M PLUS Rounded 1c"; }
+
+html{
+	font-family: "M PLUS Rounded 1c"; 
+	color:#515151;
+	font-feature-settings: "palt";
+}
+html:hover{
+scroll-behavior: smooth;
+}
+
+body{
+	width:100vw;
+	margin:0;
+	display:grid;
+	background-color:rgb(153,153,153,0.1);
+	grid-template:
+		"header header header" 
+		"...... content01 ......"
+		"...... content02 ......"
+		"...... content03......"
+		"...... content04......"
+		"footer footer footer"
+		/auto 800px auto;
+}
+
+header{
+	grid-area:header;
+	height:2vh;
+	padding:22% 0;
+	text-align:center;
+	font-size:150%;
+	background:#FFF;
+}
+
+nav{
+	position: fixed; /* 画面に固定して追従させます */
+  	top: 20vh; /* 表示画面の上から20%のところから表示を始めます */
+	right:0; /* 固定位置は右側 */
+	z-index:1; /* 他の要素より前に出します */
+}
+
+nav ul li{
+		 list-style-type:none;
+		 }
+
+nav ul li a{
+      text-decoration:none;
+      -webkit-writing-mode: vertical-rl; /* Chrome,Safari対応*/
+      -ms-writing-mode: tb-rl; /* IE対応*/
+       text-orientation:sideways;
+        font-size:1rem; /*  フォントサイズ0になっているので指定する */
+  		/* 以下、装飾 */
+		padding:20px 24px;
+		border-bottom:1px solid #515151;
+		color:#515151;
+     }
+
+nav ul li a:hover{
+	color:#FFC607;
+}
+
+main h2{ 
+ 	display: flex;
+  	align-items: center; /* 垂直中心 */
+ 	 justify-content: center; /* 水平中心 */
+ 	 padding-bottom:10%;
+}
+
+h2:before, h2:after {
+  border-top: 1px solid;
+  content: "";
+  width: 3em; /* 線の長さ */
+}
+h2:before {
+  margin-right: 1em; /* 文字の右隣 */
+}
+h2:after {
+  margin-left: 1em; /* 文字の左隣 */
+}
+
+#about,#untilNow,#skill,#theWork,#progress,#trigger,#commitment,#technology{
+	margin-bottom:15%;
+	padding-top:10%;
+}
+#about,#progress{
+	grid-area:content01;
+	text-align:center;
+}
+
+#aboutText02{
+	display:none;
+}
+
+#a{
+	opacity:0;
+}
+#aboutContent{
+	display:flex;
+	align-items: center;
+	text-align:left;
+}
+
+#aboutContent img{
+	border-radius:50%;
+	margin:2vw;
+}
+
+#about h3{
+	margin:20px 0;
+}
+#about p{
+	width:70%;
+	margin:10px auto;
+	text-align:left;
+}
+#aboutContent table th{
+	width:30%;
+	text-align:right;
+}
+/*コンテンツ　ここから*/
+#content01,#design{
+	grid-area:content02;
+	text-align:left;
+}
+
+#content01 p{
+	background:#fff;
+	width:75%;
+	font-size:130%;
+	text-align:left;
+	padding:2vw;
+	margin:3% auto;
+	box-shadow: 10px 10px 0px 0 rgb(198, 224, 231);
+}
+
+.yaji{
+	width:0;
+	height:0;
+  	border-left: 30px solid transparent;
+  	border-right: 30px solid transparent;
+ 	 border-top: 30px solid #515151;
+ 	 padding:0;
+ 	 text-align:center;
+ 	 margin:10px auto 0 auto;
+}
+
+/*コンテンツ　ここまで*/
+/*スキルコンテンツ　ここから*/
+#skill,#commitment{
+	grid-area:content03;
+}
+
+#skillcontent{
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:space-between;
+	width:80%;
+	margin:5% auto;
+	padding:0;
+}
+
+.css-rotate{
+	position:relative;
+	width:200px;
+	height:250px;
+}
+.css-rotate div{
+	position:absolute;
+	width:200px;
+	height:100px;
+	padding:50px 5px;
+	text-decoration:none;
+	background:#fff;
+	margin:10px 20px 20px 10px;
+    box-shadow: 10px 10px 0px 0 rgb(198, 224, 231);
+    backface-visibility:hidden;
+	transition:all 1s ease;
+}
+
+.css-front{
+	font-size:120%;
+	text-align:center;
+	}
+	
+	.css-back{
+		transform:rotateY(180deg);	
+		font-size:90%;
+		text-align:left;
+	}
+	
+	.css-rotate:hover .css-front{
+		transform:rotateY( 180deg );	
+	}
+	
+	.css-rotate:hover .css-back{
+		transform:rotateY( 0deg );	
+		background:#FFC607;
+		color:#000;
+		border:none;
+	}
+
+/*スキルコンテンツ　ここまで*/
+/*作品　ここまで*/
+#theWork,#technology{
+	grid-area:content04;
+}
+
+#content02{
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:space-between;
+	width:100%;
+}
+
+.workimg a{
+	width:260px;
+	margin:0;
+	padding:0;
+	box-shadow: 0px 7px 0 0 rgb(198, 224, 231);
+}
+
+.workimg a:hover{
+	box-shadow:none;
+	position: relative;
+  	top: 10px;
+}
+.workContent p{
+	text-align:center;
+	margin-top:20px;
+}
+/*作品　ここまで*/
+footer{
+	grid-area:footer;
+	background:rgb(198, 224, 231);
+}
+
+footer ul{
+	width:100%;
+	display:flex;
+	justify-content:space-between;
+	padding:50px;
+}
+
+footer ul li{
+	list-style-type:none;
+}
+footer ul li a{
+	text-decoration:none;
+	color:#515151;
+}
+
+footer ul li a:hover{
+	text-decoration:none;
+	color:#FFC607;
+}
+/*共通css ここから*/
+/*work01*/
+#progress-content{
+	width:100%;
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:space-between;
+	margin:10% auto;
+	
+}
+
+#progress-content img{
+	width:400px;
+	margin:10px;
+	border-radius:25%;
+}
+
+.timeline {
+list-style: none;
+width:300px;
+}
+.timeline li {
+margin-bottom: 30px;
+}
+
+.timeline-content {
+margin-top: 1rem;
+}
+
+
+
+.timeline span.midashi{
+font-weight:500;
+font-size:120%;
+color: #fdc44f;
+margin-right:10px;
+text-align:left;
+}
+
+ul.timeline li::before {
+font-family: “Font Awesome 5 Free”;
+content: “\f111”;
+transform: scale(1.0);
+font-weight: bold;
+color: #fdc44f;
+font-size:80%;
+}
+
+.timeline li {
+overflow: hidden;
+margin: 0;
+position: relative;
+}
+
+.timeline-date {
+margin-top: 10px;
+font-size:100%;
+text-align:left;
+}
+
+
+.timeline-content {
+width: auto;
+float: left;
+border-left: 3px #e5e5d1 solid;
+padding-left: 5%;
+}
+
+
+#trigger{
+	text-align:center;
+	width:800px;
+	margin:0 auto;
+}
+
+#triggerimg,#commitment_content{
+	width:100%;
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:space-between;
+	margin:0 auto;
+}
+
+#skillcontent{
+	width:100%;
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:space-between;
+	margin:0 auto;
+}
+.sp{
+	display:none;
+}
+
+#commitment_text{
+	width:40%;
+}
+
+#commitment_img{
+width:40%;
+}
+
+#color_table{
+	display:flex;
+	margin-bottom:20px;
+}
+
+.colors{
+	width:75px;
+	height:75px;
+	margin-right:10px;
+}
+
+#color01{
+	background:#EBDAC9;
+}
+
+#color02{
+	background:#F4C291;
+}
+
+#color03{
+	background:#707070;
+}
+
+#color04{
+	background:#0088ce;
+}
+
+#color05{
+	background:#ffd900;
+}
+
+#color06{
+	background:#cccccc;
+}
+
+#color07{
+	background:#a9bfb4;
+}
+
+#color08{
+	background:#DADAB4;
+}
+
+#color09{
+	background:#ABBABA;
+}
+
+#commitment_text p{
+	margin-bottom:20px;
+}
+
+#commitment_img p{
+	margin-bottom:70px;
+}
+/*work01 ここまで*/
+@media screen and (max-width:900px) {
+	body{
+	width:100vw;
+	margin:0;
+	display:grid;
+	grid-template:
+		"header"
+		"content01"
+		" content02 "
+		" content03"
+		" content04"
+		"footer"
+		/800px;
+	}
+	
+	#aboutContent{
+	display:flex;
+	flex-wrap:wrap;
+	text-align:left;
+	width:410px;
+	margin:0 auto;
+}
+
+	#aboutContent img{
+	border-radius:50%;
+	margin:2vw;
+	width:250px;
+	margin:0 auto;
+}
+
+#aboutText01{
+	display:none;
+}
+
+#aboutText02{
+	display:block;
+	margin:5vh auto;
+	width:300px;
+}
+
+#aboutContent table tr{
+	text-align:center;
+	line-height:30px;
+}
+
+#content01 p,#about p{
+	width:50%;
+}
+
+#about p{
+	margin:0 auto;
+}
+/*work01 ここから*/
+#progress-content{
+	width:410px;
+	margin:0 auto;
+}
+#progress-content img{
+	margin-bottom:20px;
+}
+
+.pc{
+	display:none;
+}
+
+.sp{
+	display:block;
+}
+
+#triggerimg,#commitment_content{
+	width:355px;
+	margin:0 auto;
+}
+
+#commitment_text{
+	width:300px;
+	margin:10px auto;
+}
+
+#skillcontent{
+	width:50vw;
+	margin:0 auto;
+}
+
+#content02{
+	width:40%;
+	margin:0 auto;
+}
+
+footer ul{
+	width:40%;
+}
+}
+/*work01　ここまで*/
+@media screen and (max-width:480px) {
+
+	body{
+	width:100%;
+	margin:0 auto;
+	padding:0;
+	display:grid;
+	grid-template:
+		"header"
+		"content01"
+		"content02"
+		"content03"
+		"content04"
+		"footer"
+		/100%;
+	}
+	
+	header{
+		padding-bottom:40%;	
+	}
+	
+	#aboutContent{
+	display:flex;
+	flex-wrap:wrap;
+	text-align:left;
+}
+
+nav{
+	top:25vh;
+}
+
+nav ul li a{
+	 	font-size:0.5rem; /*  フォントサイズ0になっているので指定する */
+  		/* 以下、装飾 */
+		padding:10px 14px;
+		border-bottom:solid 1px #515151;
+}
+
+#trigger,#riggerimg{
+	width:360px;
+	margin:0 auto;
+}
+
+ul.timeline {
+	margin:0 auto;
+}
+
+#skillcontent{
+	width:370px;
+	margin:0 auto;
+}
+}
+
+
